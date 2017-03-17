@@ -17,20 +17,24 @@ eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9
 
 The following is an example of a JWT Claims Set: 
 
-```{"iss":"joe",
+```
+{"iss":"joe",
  "exp":1300819380,
  "http://example.com/is_root":true}
  ```
 
 Base64url encoding the bytes of the UTF-8 representation of the JSON Claims Set yields this Encoded JWS Payload, which is used as the JWT Second Part (with line breaks for display purposes only):
 
-```eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly
+```
+eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly
 9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ
 ```
 
 Signing the Encoded JWS Header and Encoded JWS Payload with the HMAC SHA-256 algorithm and base64url encoding the signature in the manner specified in [JWS], yields this Encoded JWS Signature, which is used as the JWT Third Part: 
 
-```dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk```
+``` 
+dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+```
 
 Concatenating these parts in the order Header.Second.Third with period characters between the parts yields this complete JWT (with line breaks for display purposes only): 
 
@@ -41,18 +45,30 @@ cGxlLmNvbS9pc19yb290Ijp0cnVlfQ
 .
 dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
 ```
-This computation is illustrated in more detail in [JWS], Appendix A.1.
 
 
 ## Authentication with the Bot Connector
 
-The Bot Connector service utilizes OAuth 2.0. 
+The Bot Connector service uses OAuth 2.0 client credentials for bot authentication. To send messages to the Bot Connector, your bot must get an access token from the Microsoft Account (MSA) server. After getting the access token, you include the token in the Authorization header of all requests that your bot sends to the Bot Connector.
+
+### Getting access to the token
+
+The whole process can be done in three simple steps:
+
+1. POST to the MSA login service
+2. Get the JWT token
+3. Use the JWT token in an authorization header
+
+
 
 ## Issues related to expiration time in C#
 
 ![GitHub Logo](C:\Users\v-frgome\Documents\Bot\Articles\images\auth_bot_to_bot_connector.png)
 Format: ![Alt Text](url)
 
+
+
+### References
 
 * [node](https://nodejs.org)
 * [markdown-it](https://www.npmjs.com/package/markdown-it)

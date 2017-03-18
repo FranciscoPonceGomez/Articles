@@ -1,0 +1,30 @@
+# Creating and deploying a Bot in Node.js on VS 2015
+
+The Microsoft Bot Framework has been around since 2016. It offers the posibility of building your own conversational bot within a few clicks and a painsless registration process. You can use both a C# SDK and a Node.js SDK in order to be accesible to a broad range of developers. If you have ever built a web application in Node.js and published it in GitHub you probably are very familiar with Git commands.
+
+But what about using your beloved Visual Studio IDE to build Node.js apps without punching a single Git command and deploying meaninglessly on Azure? Well, thanks to the Node Tools you can know do everything without leaving the VS 2015 IDE. If you follow these steps you will see how easy it is to create and deploy you Node.js app in VS 2015.
+
+## Prerequisits
+
+1. Download [Visual Studio 2015](https://www.visualstudio.com/post-download-vs/?sku=community&clcid=0x409&downloadrename=true) if you don't have it yet.
+2. Enable [Node Tools](https://www.visualstudio.com/vs/node-js/) for Visual Studio.
+
+## Create a Node.js app from one of the nunerous templates offered
+
+1. Create the app in Visual Studio 2015. 
+2. Select one of the Node.js templates.
+
+## Install all the necessary npm packages
+
+If you come from the fascinating JavaScript world, you probably know what npm is. But for those C# developers out there that just want to dip their toes in the Node.js waters without leaving the confort of Visual Studio IDE I will explain it a little bit.
+
+### Overview
+
+NPM is the default package manager for the JavaScript runtime environment Node.js. It consists of a command line client that interacts with a remote registry. It allows users to consume and distribute JavaScript modules that are available on the registry. 
+
+### Usage
+
+NPM can manage packages that are local dependencies of a particular project, as well as globally-installed JavaScript tools. When used as a dependency manager for a local project, npm can install, in one command, all the dependencies of a project through the package.json file. In the package.json file, each dependency can specify a range of valid versions using the semantic versioning scheme, allowing developers to auto-update their packages while at the same time avoiding unwanted breaking changes. npm also provides version-bumping tools for developers to tag their packages with a particular version.
+
+## Deploy to Azure
+

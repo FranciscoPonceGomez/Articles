@@ -51,27 +51,46 @@ dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
 
 The Bot Connector service uses OAuth 2.0 client credentials for bot authentication. To send messages to the Bot Connector, your bot must get an access token from the Microsoft Account (MSA) server. After getting the access token, you include the token in the Authorization header of all requests that your bot sends to the Bot Connector.
 
+The whole process is made in three big steps:
+
+1. Getting an access token and calling the Bot Connector Service.
+2. Authenticating calls from the Bot Connector Service.
+3. Enabling Authentication from the Bot Framework Emulator.
+
 ### Getting access to the token
 
 The whole process can be done in three simple steps:
 
-1. POST to the MSA login service
-2. Get the JWT token
-3. Use the JWT token in an authorization header
+1. POST to the MSA login service.
+2. Get the JWT token.
+3. Use the JWT token in an authorization header.
+
+An schema for all three steps are depicted below:
 
 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
-## Issues related to expiration time in C#
+![alt text](/images/auth_bot_connector_to_bot.png "Logo Title Text 1")
 
-![GitHub Logo](C:\Users\v-frgome\Documents\Bot\Articles\images\auth_bot_to_bot_connector.png)
-Format: ![Alt Text](url)
+For more information about the details for every step you can look here [here](https://docs.botframework.com/en-us/core-concepts/authentication/#getaccesstoken)
+.
+
+
+## Token expiration time and related issues in C#
+
+The BotFramework deal with all theses problems in the backstage . Classes like [JwtTokenExtractor.cs](https://github.com/Microsoft/BotBuilder/blob/3a98a6b3d15962a57b5454bfb3f730d3588de3ef/CSharp/Library/Microsoft.Bot.Connector.Shared/JwtTokenExtractor.cs), [JwtTokenRefresher.cs](https://github.com/Microsoft/BotBuilder/blob/497252e8d9949be20baa2cebaa6ce56de04461cf/CSharp/Library/Microsoft.Bot.Connector.Shared/JwtTokenRefresher.cs) and
+[BotAuthenticator.cs](https://github.com/Microsoft/BotBuilder/blob/a71e64c24bd40f8b99de0a3326ea1b79110c33e1/CSharp/Library/Microsoft.Bot.Connector.Shared/BotAuthenticator.cs)
+take care of de adquisition, 
+
+
+Up to here everything is supposed to work correctly right? Well, not yet.
 
 
 
 ### References
 
-* [node](https://nodejs.org)
+
 * [markdown-it](https://www.npmjs.com/package/markdown-it)
-* [tasks.json](/docs/editor/tasks)
+* [JSON web token](http://openid.net/specs/draft-jones-json-web-token-07.html)
 
 > This block quote is here for your information.

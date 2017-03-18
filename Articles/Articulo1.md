@@ -70,7 +70,7 @@ An schema for all three steps are depicted below:
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
-![alt text](/images/auth_bot_connector_to_bot.png "Logo Title Text 1")
+![alt text](https://github.com/FranciscoPonceGomez/Articles//images/auth_bot_connector_to_bot.png "Logo Title Text 1")
 
 For more information about the details for every step you can look here [here](https://docs.botframework.com/en-us/core-concepts/authentication/#getaccesstoken)
 .

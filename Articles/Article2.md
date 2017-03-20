@@ -4,7 +4,7 @@ The Microsoft Bot Framework has been around since 2016. It offers the posibility
 
 But what about using your beloved Visual Studio IDE to build Node.js apps without punching a single Git command and deploying meaninglessly on Azure? Well, thanks to the Node Tools you can know do everything without leaving the VS 2015 IDE. If you follow these steps you will see how easy it is to create and deploy you Node.js app in VS 2015.
 
-## Prerequisits
+## Prerequisites
 
 1. Download [Visual Studio 2015](https://www.visualstudio.com/post-download-vs/?sku=community&clcid=0x409&downloadrename=true) if you don't have it yet.
 2. Enable [Node Tools](https://www.visualstudio.com/vs/node-js/) for Visual Studio.
@@ -15,11 +15,11 @@ But what about using your beloved Visual Studio IDE to build Node.js apps withou
 2. Select one of the Node.js templates.
 
 <div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/newProject.png" /> Selecting a new project </div>. 
-<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/NodeJSProject.png" /> Selecting a new project </div>. 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/NodeJSProject.png" /> Selecting a Node.js template </div>. 
 
 ## Install all the necessary npm packages
 
-If you come from the fascinating JavaScript world, you probably know what npm is. But for those C# developers out there that just want to dip their toes in the Node.js waters without leaving the confort of Visual Studio IDE I will explain it a little bit.
+If you come from the fascinating JavaScript world, you probably know what npm is. But for those C# developers out there that just want to dip their toes in the Node.js waters without leaving the confort of Visual Studio IDE I will explain it birefly.
 
 ### Overview
 
@@ -40,6 +40,8 @@ var builder = require('botbuilder');
 
 In Visual studio you can add the necessary modules through Node Tools:
 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/npmPackages.png" /> Opening the npm Package Manager </div>. 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/npmPackages2.png" /> Selecting the necessary modules </div>. 
 
 This will be the equivalent of doing the folowing in npm command shell:
 

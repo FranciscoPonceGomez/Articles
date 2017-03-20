@@ -11,11 +11,14 @@ But what about using your beloved Visual Studio IDE to build Node.js apps withou
 
 ## Create a Node.js app from one of the nunerous templates offered
 
-1. Create the app in Visual Studio 2015. 
+1. Create the app in Visual Studio 2015.
 2. Select one of the Node.js templates.
 
-<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/newProject.png" /> Selecting a new project </div>. 
-<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/NodeJSProject.png" /> Selecting a Node.js template </div>. 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/newProject.png" /> Selecting a new project </div> 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/NodeJSProject.png" /> Selecting a Node.js template </div> 
+
+This is how the project structure looks in VS:
+
 
 ## Install all the necessary npm packages
 
@@ -40,8 +43,8 @@ var builder = require('botbuilder');
 
 In Visual studio you can add the necessary modules through Node Tools:
 
-<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/npmPackages.png" /> Opening the npm Package Manager </div>. 
-<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/npmPackages2.png" /> Selecting the necessary modules </div>. 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/npmPackages.png" /> Opening the npm Package Manager </div> 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/npmPackages2.png" /> Selecting the necessary modules </div> 
 
 This will be the equivalent of doing the folowing in npm command shell:
 
@@ -49,7 +52,6 @@ This will be the equivalent of doing the folowing in npm command shell:
 npm install restify --save
 npm install botbuilder --save
 ```
-
 
 ## Deploy to Azure
 

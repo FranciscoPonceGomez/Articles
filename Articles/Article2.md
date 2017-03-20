@@ -2,7 +2,7 @@
 
 The Microsoft Bot Framework has been around since 2016. It offers the posibility of building your own conversational bot within a few clicks in a painsless registration process. You can use both a C# SDK and a Node.js SDK in order to be accesible to a broad range of developers. If you have ever built a web application in Node.js and published it in GitHub you probably are very familiar with Git commands.
 
-But what about using your beloved Visual Studio IDE to build Node.js apps without punching a single Git command and deploying meaninglessly on Azure? Well, thanks to the Node Tools you can know do everything without leaving the VS 2015 IDE. If you follow these steps you will see how easy it is to create and deploy you Node.js app in VS 2015.
+But what about using your beloved Visual Studio IDE to build Node.js apps without punching a single Git command and deploying meaninglessly on Azure? Well, thanks to the Node Tools you can know do everything without leaving the VS 2015 IDE. If you follow these steps you will see how easy it is to create and deploy your Node.js app in VS 2015.
 
 ## Prerequisites
 

@@ -54,3 +54,14 @@ npm install botbuilder --save
 
 ## Deploy to Azure
 
+Deployment into Azure from Visual Studio is pretty straightforward. On the solution explorer we just need to right click and select "Publish". From there we have to fill out the necessary information and login into our Azure account. Once everything is setup we can publish and immediately our Web App will whow app in our Azure Dashboard:
+
+
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish.PNG" />  </div> 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish2.PNG" />  </div> 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish3.PNG" />  </div> 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish4.PNG" />  </div> 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish5.PNG" />  </div> 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish6.PNG" />  </div> 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish7.PNG" />  </div> 
+

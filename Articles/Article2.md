@@ -21,7 +21,7 @@ But what about using your beloved Visual Studio IDE to build Node.js apps withou
 
 ## Install all the necessary npm packages
 
-If you come from the fascinating JavaScript world, you probably know what npm is. But for those C# developers out there that just want to dip their toes in the Node.js waters without leaving the confort of Visual Studio IDE I will explain it birefly.
+If you come from the fascinating JavaScript world, you probably know what npm is. But for those C# developers out there that just want to dip their toes in the Node.js waters without leaving the confort of Visual Studio IDE I will explain it briefly.
 
 ### Overview
 
@@ -33,7 +33,7 @@ NPM can manage packages that are local dependencies of a particular project, as 
 
 ### How to install npm packages in VS 2015 with Node Tools
 
-The tipical Node.js application calls all the modules it needs at the begining with a sintaxis like this:
+The tipical Node.js application calls all the modules it needs at the begining with a syntax like this:
 
 ```javascript
 var restify = require('restify');
@@ -64,7 +64,7 @@ Deployment into Azure from Visual Studio is pretty straightforward. On the solut
 <div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish5.PNG" />  </div> 
 <div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish6.PNG" />  </div> 
 
-Once everything is setup we can publish, and immediately after our Web App will whow up in our Azure Dashboard:
+Once everything is setup we can publish, and immediately after our Web App will show up in our Azure Dashboard:
 
 <div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish7.PNG" />  </div> 
 

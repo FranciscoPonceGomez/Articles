@@ -64,8 +64,9 @@ Deployment into Azure from Visual Studio is pretty straightforward. On the solut
 <div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish5.PNG" />  </div> 
 <div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish6.PNG" />  </div> 
 
-Once everything is setup we can publish and immediately our Web App will whow app in our Azure Dashboard:
+
+Once everything is setup we can publish, and immediately after our Web App will whow up in our Azure Dashboard:
 
 <div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/publish7.PNG" />  </div> 
 
-As you can see is very easy to create and deploy a project in Node.js without using more IDE than VS 2015. Now you can create bot in both C# and Node.js without context changing and painfull CLI commands.
+As you can see is very easy to create and deploy a project in Node.js without using more IDEs than VS 2015. Now you can create bots in both C# and Node.js without context changing and painfull CLI commands.

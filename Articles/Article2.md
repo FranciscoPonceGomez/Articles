@@ -16,8 +16,7 @@ But what about using your beloved Visual Studio IDE to build Node.js apps withou
 
 <div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/newProject.png" /> Selecting a new project </div> 
 <div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/NodeJSProject.png" /> Selecting a Node.js template </div> 
-
-This is how the project structure looks in VS:
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/solutionStructure.PNG" /> Structure of the solution in VS 2015 </div> 
 
 
 ## Install all the necessary npm packages

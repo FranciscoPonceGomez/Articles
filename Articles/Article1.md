@@ -6,7 +6,7 @@ The suggested pronunciation of JWT is the same as the English word "jot".
 
 The following example JWT Header declares that the encoded object is a JSON Web Token (JWT) and the JWT is signed using the HMAC SHA-256 algorithm:
 
-```
+```JSON
 {"typ":"JWT",
  "alg":"HS256"}
  ```
@@ -17,7 +17,7 @@ eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9
 
 The following is an example of a JWT Claims Set: 
 
-```
+```JSON
 {"iss":"joe",
  "exp":1300819380,
  "http://example.com/is_root":true}
@@ -25,20 +25,21 @@ The following is an example of a JWT Claims Set:
 
 Base64url encoding the bytes of the UTF-8 representation of the JSON Claims Set yields this Encoded JWS Payload, which is used as the JWT Second Part (with line breaks for display purposes only):
 
-```
+```JSON
 eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly
 9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ
 ```
 
 Signing the Encoded JWS Header and Encoded JWS Payload with the HMAC SHA-256 algorithm and base64url encoding the signature in the manner specified in [JWS], yields this Encoded JWS Signature, which is used as the JWT Third Part: 
 
-``` 
+```
 dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
 ```
 
-Concatenating these parts in the order Header.Second.Third with period characters between the parts yields this complete JWT (with line breaks for display purposes only): 
+Concatenating these parts in the order Header.Second.Third with period characters between the parts yields this complete JWT (with line breaks for display purposes only):
 
-```eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9
+```
+eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9
 .
 eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFt
 cGxlLmNvbS9pc19yb290Ijp0cnVlfQ
@@ -49,9 +50,9 @@ dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
 
 ## Authentication with the Bot Connector
 
-The Bot Connector service uses OAuth 2.0 client credentials for bot authentication. To send messages to the Bot Connector, your bot must get an access token from the Microsoft Account (MSA) server. After getting the access token, you include the token in the Authorization header of all requests that your bot sends to the Bot Connector.
+The Bot Connector service uses OAuth 2.0 client credentials for bot authentication. To send messages to the Bot Connector, your bot must get an access token from the Microsoft Account (MSA) server. After getting the access token, you can include the token in the Authorization header of all requests that your bot sends to the Bot Connector.
 
-The whole process is made in three big steps:
+The whole process is made in three steps:
 
 1. Getting an access token and calling the Bot Connector Service.
 2. Authenticating calls from the Bot Connector Service.
@@ -80,8 +81,9 @@ For more information about the details for every step you can look here [here](h
 
 The BotFramework deal with all theses problems in the backstage . Classes like [JwtTokenExtractor.cs](https://github.com/Microsoft/BotBuilder/blob/3a98a6b3d15962a57b5454bfb3f730d3588de3ef/CSharp/Library/Microsoft.Bot.Connector.Shared/JwtTokenExtractor.cs), [JwtTokenRefresher.cs](https://github.com/Microsoft/BotBuilder/blob/497252e8d9949be20baa2cebaa6ce56de04461cf/CSharp/Library/Microsoft.Bot.Connector.Shared/JwtTokenRefresher.cs) and
 [BotAuthenticator.cs](https://github.com/Microsoft/BotBuilder/blob/a71e64c24bd40f8b99de0a3326ea1b79110c33e1/CSharp/Library/Microsoft.Bot.Connector.Shared/BotAuthenticator.cs)
-take care of de adquisition, 
+take care of de adquisition, validation and lifecycle maintenance of the token. 
 
+By defayult the expiration time of the token is one hour (3600 seconds). However, we have detected that 
 
 Up to here everything is supposed to work correctly right? Well, not yet.
 

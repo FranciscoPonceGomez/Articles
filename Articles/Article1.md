@@ -25,20 +25,20 @@ The following is an example of a JWT Claims Set:
 
 Base64url encoding the bytes of the UTF-8 representation of the JSON Claims Set yields this Encoded JWS Payload, which is used as the JWT Second Part (with line breaks for display purposes only):
 
-```JSON
+```CSHARP
 eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly
 9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ
 ```
 
 Signing the Encoded JWS Header and Encoded JWS Payload with the HMAC SHA-256 algorithm and base64url encoding the signature in the manner specified in [JWS], yields this Encoded JWS Signature, which is used as the JWT Third Part: 
 
-```
+```CSHARP
 dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
 ```
 
 Concatenating these parts in the order Header.Second.Third with period characters between the parts yields this complete JWT (with line breaks for display purposes only):
 
-```
+```CSHARP
 eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9
 .
 eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFt
@@ -83,16 +83,46 @@ The BotFramework deal with all theses problems in the backstage . Classes like [
 [BotAuthenticator.cs](https://github.com/Microsoft/BotBuilder/blob/a71e64c24bd40f8b99de0a3326ea1b79110c33e1/CSharp/Library/Microsoft.Bot.Connector.Shared/BotAuthenticator.cs)
 take care of de adquisition, validation and lifecycle maintenance of the token. 
 
-By defayult the expiration time of the token is one hour (3600 seconds). However, we have detected that 
+By defayult the expiration time of the token is one hour (3600 seconds). However, even though JwtTokenRefresher can find a new token before the expiration time we have detected that sometimes, after one hour of being iddle, a bot can lose its creadentials and return an unathorize error:
 
-Up to here everything is supposed to work correctly right? Well, not yet.
+```MSDOS
+Response status code does not indicate success: 401 (Unauthorized)
+```
+
+What the error is telling us is that our token has expired and the Bot Framework was unable to fetch a new one before that happened. Normally JwtTokenRefresher will retrieve a new one but as I said, we have experienced this error. However, we can work around this problem by simply creating a task that keeps the service alive and doesn't allow our bot to be idle while still in our current session. We can do that in many ways but we opted for a simple infinite loop with a 30 minute delay:
 
 
+```CSHARP
+[Serializable]
+public class ActionDialog : IDialog<string>
+
+   public async Task StartAsync(IDialogContext context)
+   {
+       Task.Factory.StartNew(() => GraphApiHelper.KeepServiceAlive());
+       context.Wait(MessageReceivedAsync);
+   }
+
+    static bool isAlreadyInAliveMode = false;
+
+    public static async Task KeepServiceAlive()
+    {
+        if (isAlreadyInAliveMode) return;
+        isAlreadyInAliveMode = true;
+        var authUrl = "https://login.microsoftonline.com/common/oauth2/v2.0/token";
+        HttpResponseMessage response;
+        while (true)
+        {
+            using(var httpClient = new HttpClient())
+            {
+                response = await httpClient.PostAsync(authUrl, new StringContent("credentials"));
+            }
+            await Task.Delay(1800); //sleep for 30  minutes
+        }
+ }
+```
 
 ### References
 
-
-* [markdown-it](https://www.npmjs.com/package/markdown-it)
 * [JSON web token](http://openid.net/specs/draft-jones-json-web-token-07.html)
 
 > This block quote is here for your information.

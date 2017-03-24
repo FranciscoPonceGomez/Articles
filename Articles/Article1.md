@@ -70,8 +70,6 @@ The whole process can be done in three simple steps:
 
 An schema for all three steps are depicted below:
 
-<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/newProject.png" /> Selecting a new project </div> 
-
 <div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/auth_bot_to_bot_connector.png" /> Communicatoin between the Bot and the Bot Connector</div> 
 
 <div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles/blob/master/Articles/images/auth_bot_connector_to_bot.png" /> Communicatoin between Bot Connector and the Bot </div> 

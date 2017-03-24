@@ -68,10 +68,11 @@ The whole process can be done in three simple steps:
 
 An schema for all three steps are depicted below:
 
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles//images/auth_bot_to_bot_connector.png" /> Communicatoin between Bot Connector and the Bot </div> 
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles//images/auth_bot_connector_to_bot.png" /> Communicatoin between Bot Connector and the Bot </div> 
 
-![alt text](https://github.com/FranciscoPonceGomez/Articles//images/auth_bot_connector_to_bot.png "Logo Title Text 1")
+<div style="text-align:center"><img src ="https://github.com/FranciscoPonceGomez/Articles//images/auth_bot_framework_emulator_to_bot.png" /> Communicatoin between Bot Connector and the Bot </div> 
 
 For more information about the details for every step you can look here [here](https://docs.botframework.com/en-us/core-concepts/authentication/#getaccesstoken)
 .
@@ -95,7 +96,7 @@ What the error is telling us is that our token has expired and the Bot Framework
 ```CSHARP
 [Serializable]
 public class ActionDialog : IDialog<string>
-
+{
    public async Task StartAsync(IDialogContext context)
    {
        Task.Factory.StartNew(() => GraphApiHelper.KeepServiceAlive());
@@ -118,11 +119,10 @@ public class ActionDialog : IDialog<string>
             }
             await Task.Delay(1800); //sleep for 30  minutes
         }
- }
+    }
+}
 ```
 
 ### References
 
 * [JSON web token](http://openid.net/specs/draft-jones-json-web-token-07.html)
-
-> This block quote is here for your information.
